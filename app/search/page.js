@@ -1,21 +1,21 @@
 "use client";
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 import hotels from "../../public/hotels.json";
-import React from "react";
+import React, { Suspense } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { useSearchParams } from "next/navigation";
 import { format } from "date-fns";
 import InfoCard from "./InfoCard";
 
-function Search({ searchResults }) {
+// Extracted the search parameter logic into a separate component
+function SearchResults() {
   const searchParams = useSearchParams();
 
   const location = searchParams.get("location") || "Unknown";
   const startDate = searchParams.get("startDate");
   const endDate = searchParams.get("endDate");
   const noOfGuests = searchParams.get("noOfGuests") || "1";
-  
 
   const formattedStartDate = startDate
     ? format(new Date(startDate), "dd MMMM yy")
@@ -26,7 +26,7 @@ function Search({ searchResults }) {
   const range = `${formattedStartDate} to ${formattedEndDate}`;
 
   return (
-    <div>
+    <>
       <Header
         placeholder={`${location} | ${range} | ${
           noOfGuests > 1 ? "guests" : "guest"
@@ -53,10 +53,7 @@ function Search({ searchResults }) {
 
       <div className="flex flex-col">
         {hotels?.map(
-          (
-            { img, location, title, description, star, price, total },
-            index
-          ) => (
+          ({ img, location, title, description, star, price, total }, index) => (
             <InfoCard
               key={index}
               img={img}
@@ -70,6 +67,16 @@ function Search({ searchResults }) {
           )
         )}
       </div>
+    </>
+  );
+}
+
+function Search() {
+  return (
+    <div>
+      <Suspense fallback={<div>Loading search results...</div>}>
+        <SearchResults />
+      </Suspense>
       <Footer />
     </div>
   );
