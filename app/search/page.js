@@ -1,4 +1,5 @@
 "use client";
+export const dynamic = 'force-dynamic';
 import hotels from "../../public/hotels.json";
 import React from "react";
 import Header from "../../components/Header";
