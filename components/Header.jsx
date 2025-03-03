@@ -34,10 +34,10 @@ export default function Header({ placeholder }) {
       location: searchInput,
       startDate: startDate.toISOString(),
       endDate: endDate.toISOString(),
-      noOfGuests: noOfGuests.toString(),
+      noOfGuests: noOfGuests,
     }).toString();
 
-    router.push(`/search?${queryParams}`);
+    router.push(`search?${queryParams}`);
   };
 
   function handleSelect(ranges) {

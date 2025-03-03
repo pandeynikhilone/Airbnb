@@ -1,11 +1,11 @@
 import fs from "fs";
 import path from "path";
-import Banner from "@/components/Banner";
-import Header from "@/components/Header";
-import Cards from "@/components/Cards";
-import CardsOne from "@/components/CardsOne";
-import LowerBanner from "@/components/LowerBanner";
-import Footer from "@/components/Footer";
+import Banner from "../components/Banner";
+import Header from "../components/Header";
+import Cards from "../components/Cards";
+import CardsOne from "../components/CardsOne";
+import LowerBanner from "../components/LowerBanner";
+import Footer from "../components/Footer";
 
 export default async function Home() {
   const filePath = path.join(process.cwd(), "public", "data.json");

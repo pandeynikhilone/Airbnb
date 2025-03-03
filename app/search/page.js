@@ -74,5 +74,4 @@ function Search({ searchResults }) {
   );
 }
 
-
 export default Search;
