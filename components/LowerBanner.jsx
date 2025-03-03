@@ -5,7 +5,7 @@ function LowerBanner({ img, title, description, buttonText }) {
   return (
     <section className="relative py-16 cursor-pointer">
       <div className="relative h-96 min-w-[300px]">
-        <Image src={img} objectFit="cover" layout="fill" />
+        <Image src={img} objectFit="cover" layout="fill" alt="A brief description of the image" />
       </div>
 
       <div className="absolute top-32 left-12">

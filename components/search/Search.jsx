@@ -1,4 +1,5 @@
 "use client";
+import hotels from "../../public/hotels.json";
 import React from "react";
 import Header from "../Header";
 import Footer from "../Footer";
@@ -50,7 +51,7 @@ function Search({ searchResults }) {
       </main>
 
       <div className="flex flex-col">
-        {searchResults?.map(
+        {hotels?.map(
           (
             { img, location, title, description, star, price, total },
             index
@@ -73,16 +74,5 @@ function Search({ searchResults }) {
   );
 }
 
-export async function getServerSideProps() {
-  const fetchResult = await fetch("https://links.papareact.com/isz").then(
-    (res) => res.json()
-  );
-
-  return {
-    props: {
-      searchResults: fetchResult,
-    },
-  };
-}
 
 export default Search;
