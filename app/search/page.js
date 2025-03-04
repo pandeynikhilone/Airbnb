@@ -1,5 +1,4 @@
 "use client";
-export const dynamic = "force-dynamic";
 import hotels from "../../public/hotels.json";
 import React, { Suspense } from "react";
 import Header from "../../components/Header";
@@ -74,7 +73,7 @@ function SearchResults() {
 function Search() {
   return (
     <div>
-      <Suspense fallback={<div>Loading search results...</div>}>
+      <Suspense>
         <SearchResults />
       </Suspense>
       <Footer />
