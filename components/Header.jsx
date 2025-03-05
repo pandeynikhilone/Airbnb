@@ -29,7 +29,8 @@ export default function Header({ placeholder }) {
     key: "selection",
   };
 
-  const search = () => {
+  function search() {
+    if(searchInput === "") return;
     const queryParams = new URLSearchParams({
       location: searchInput,
       startDate: startDate.toISOString(),
@@ -38,7 +39,7 @@ export default function Header({ placeholder }) {
     }).toString();
 
     router.push(`search?${queryParams}`);
-  };
+  }
 
   function handleSelect(ranges) {
     setStartDate(ranges.selection.startDate);
@@ -68,7 +69,9 @@ export default function Header({ placeholder }) {
           className="w-full text-gray-600 flex-grow pl-5 bg-transparent outline-none"
           placeholder={`${placeholder || "Start your search"}`}
         />
-        <MagnifyingGlassIcon className="hidden md:inline-flex h-8 right-0 bg-red-400 mx-2 text-white rounded-full p-2 cursor-pointer" />
+        <button onClick={search}>
+          <MagnifyingGlassIcon className="hidden md:inline-flex h-8 right-0 bg-red-400 mx-2 text-white rounded-full p-2 cursor-pointer" />
+        </button>
       </div>
       {/* Right */}
       <div className="flex space-x-4 items-center justify-end text-gray-500">

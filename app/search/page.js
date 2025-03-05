@@ -33,10 +33,6 @@ function SearchResults() {
       />
       <main className="flex">
         <section>
-          <p className="text-xs">
-            300+ Stays {range} for {noOfGuests}{" "}
-            {noOfGuests > 1 ? "guests" : "guest"}
-          </p>
           <h1 className="text-3xl font-semibold mt-2 mb-6">
             Stays in {location || "Mars"}
           </h1>
