@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Airbnb
 
-## Getting Started
+A modern and responsive Airbnb web application built using **Next.js**, **React.js**, and **Tailwind CSS**. This project features **Server-Side Rendering (SSR)** for improved SEO and performance, **dynamic routing**, and a visually appealing design with a **mobile-first approach**.
 
-First, run the development server:
+## Table of Contents
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Contact](#contact)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Features
+
+- ✅ **Fast Performance with SSR** – Implemented **Server-Side Rendering (SSR)** for better SEO and initial load performance.
+- ✅ **Enhanced UX with Animated Loader** – Addressed SSR-induced delays by implementing an animated loader during page transitions.
+- ✅ **Calendar Selection for Bookings** – Users can select dates using an intuitive **calendar functionality** with a dynamic UI.
+
+## Technologies Used
+- **Frontend:** Next.js, React.js, Tailwind CSS
+
+## Installation
+To set up and run this project locally, follow these steps:
+
+### Prerequisites
+Ensure you have the following installed:
+- Node.js (>=16.x recommended)
+- npm or yarn
+
+### Clone the Repository
+```sh
+git clone https://github.com/pandeynikhilone/Project-AirbnbClone.git
+cd Project-AirbnbClone
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Install Dependencies
+```sh
+npm install  # or yarn install
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Start the Development Server
+```sh
+npm run dev  # or yarn dev
+```
+The application will be available at `http://localhost:3000/`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Contact
+For any queries or contributions, feel free to reach out via GitHub issues.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
